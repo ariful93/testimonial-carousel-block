@@ -143,10 +143,12 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 														testimonial.image.url ? (
 															<>
 																<img onClick={open} src={testimonial.image.url} atl={testimonial.image.title} width="80"/>
-																<span class="dashicons dashicons-edit"></span>
+																<Dashicon icon="edit" />
 															</>
 														) : (
-															<div className='default-image' onClick={open}><span class="dashicons dashicons-plus-alt"></span></div>
+															<div className='default-image' onClick={open}>
+																<Dashicon icon="plus-alt" />
+															</div>
 														)
 													}
 												</div>
@@ -193,10 +195,12 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 														testimonial.image.url ? (
 															<>
 																<img onClick={open} src={testimonial.image.url} atl={testimonial.image.title} width="80"/>
-																<span class="dashicons dashicons-edit"></span>
+																<Dashicon icon="edit" />
 															</>
 														) : (
-															<div className='default-image' onClick={open}><span class="dashicons dashicons-plus-alt"></span></div>
+															<div className='default-image' onClick={open}>
+																<Dashicon icon="plus-alt" />
+															</div>
 														)
 													}
 												</div>

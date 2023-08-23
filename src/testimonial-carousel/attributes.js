@@ -26,7 +26,7 @@ const attributes = {
     },
     slidesAutoplay: {
         type: 'boolean',
-        default: false
+        default: true
     },
     pauseOnHover: {
 		type: 'boolean',
@@ -58,7 +58,7 @@ const attributes = {
     },
     alignment: {
         type: 'string',
-        default: 'left'
+        default: 'center'
     },
     paddingTop: {
 		type: 'number',

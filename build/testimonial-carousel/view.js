@@ -4967,7 +4967,7 @@ const App = ({
     className: "default-image"
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "author-info"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", null, testimonial.authorText), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h5", null, testimonial.companyName)), imagePosition === 'right' && enableImage && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, testimonial.authorText && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", null, testimonial.authorText), testimonial.companyName && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h5", null, testimonial.companyName)), imagePosition === 'right' && enableImage && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "author-image"
   }, testimonial.image.url ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: testimonial.image.url,

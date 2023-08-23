@@ -73,8 +73,16 @@ const App = ( { attributes } ) => {
 									)
 								}
 								<div className='author-info'>
-									<h4>{testimonial.authorText}</h4>
-									<h5>{testimonial.companyName}</h5>
+									{
+										testimonial.authorText && (
+											<h4>{testimonial.authorText}</h4>
+										)
+									}
+									{
+										testimonial.companyName && (
+											<h5>{testimonial.companyName}</h5>
+										)
+									}
 								</div>
 								{
 									imagePosition === 'right' && enableImage && (

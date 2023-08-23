@@ -236,7 +236,7 @@ const attributes = {
   },
   slidesAutoplay: {
     type: 'boolean',
-    default: false
+    default: true
   },
   pauseOnHover: {
     type: 'boolean',
@@ -268,7 +268,7 @@ const attributes = {
   },
   alignment: {
     type: 'string',
-    default: 'left'
+    default: 'center'
   },
   paddingTop: {
     type: 'number',
@@ -446,13 +446,13 @@ function Edit({
       src: testimonial.image.url,
       atl: testimonial.image.title,
       width: "80"
-    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-      class: "dashicons dashicons-edit"
+    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Dashicon, {
+      icon: "edit"
     })) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "default-image",
       onClick: open
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-      class: "dashicons dashicons-plus-alt"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Dashicon, {
+      icon: "plus-alt"
     })))
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "author-info"
@@ -490,13 +490,13 @@ function Edit({
       src: testimonial.image.url,
       atl: testimonial.image.title,
       width: "80"
-    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-      class: "dashicons dashicons-edit"
+    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Dashicon, {
+      icon: "edit"
     })) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "default-image",
       onClick: open
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-      class: "dashicons dashicons-plus-alt"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Dashicon, {
+      icon: "plus-alt"
     })))
   })))))));
 }
