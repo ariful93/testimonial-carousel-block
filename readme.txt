@@ -25,6 +25,6 @@ From your WordPress dashboard
 2. **Search** for "Testimonial Carousel Block"
 3. **Install** the "Testimonial Carousel Block" plugin
 4. **Activate** "Testimonial Carousel Block" from your Plugins page
-5. **Insert Block** on your Gutenberg Editor and select "Testimonials Carousel"
+5. **Insert Block** on your Gutenberg Editor and select "Testimonial Carousel"
 
 == Screenshots ==
