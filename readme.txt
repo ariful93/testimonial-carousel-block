@@ -1,4 +1,4 @@
-=== Testimonial Carousel Gutenberg Block ===
+=== Testimonial Carousel Block ===
 Contributors:       wpfound
 Donate link:        https://github.com/ariful93/testimonial-carousel-gutenberg-block
 Tags:               gutenberg, testimonials, carousel, slider, testimonial-block, block
@@ -22,9 +22,9 @@ Easily add a testimonials carousel to your WordPress post or page via the new Gu
 From your WordPress dashboard
 
 1. **Visit** Plugins > Add New
-2. **Search** for "Testimonial Carousel for Gutenberg Block"
-3. **Install** the "Testimonial Carousel for Gutenberg Block" plugin
-4. **Activate** "Testimonial Carousel for Gutenberg Block" from your Plugins page
+2. **Search** for "Testimonial Carousel Block"
+3. **Install** the "Testimonial Carousel Block" plugin
+4. **Activate** "Testimonial Carousel Block" from your Plugins page
 5. **Insert Block** on your Gutenberg Editor and select "Testimonials Carousel"
 
 == Screenshots ==
