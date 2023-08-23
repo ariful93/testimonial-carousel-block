@@ -2,6 +2,27 @@
 	.testimonial-item__wrap {
 		border-radius: 8px;
 		padding: 15px;
+		position: relative;
+
+		button.components-button.is-primary.has-icon {
+			background: none;
+			color: inherit;
+			min-width: 30px;
+			height: 30px;
+			font-size: 10px;
+			border-radius: 100%;
+			border: 1px solid #000;
+			padding: 0 !important;
+			position: absolute;
+			right: -10px;
+			top: -10px;
+
+			span {
+				font-size: 16px;
+				
+			}
+		}
+
 
 		.testimonial-item__content {
 			@media (max-width: 991px) {
@@ -34,7 +55,7 @@
 				bottom: -15px;
 				color: #2a7dba;
 				left: 0;
-				
+
 			}
 		
 		}

@@ -1,11 +1,9 @@
-import { BlockControls, MediaUpload, RichText, useBlockProps } from '@wordpress/block-editor';
-import { Button, Dashicon, ToolbarButton, ToolbarGroup } from '@wordpress/components';
-import { __ } from '@wordpress/i18n';
+import { MediaUpload, RichText, useBlockProps } from '@wordpress/block-editor';
+import { Dashicon } from '@wordpress/components';
 import './editor.scss';
 
 import Slider from 'react-slick';
 
-import { nanoid } from 'nanoid';
 import Inspector from './Inspector';
 
 
@@ -61,32 +59,6 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 	return (
 		<div {...blockProps}>
 			
-			<BlockControls>
-				<ToolbarGroup>
-					<ToolbarButton>
-						<Button
-							onClick={() => {
-								const newItems = [...testimonialItems]
-								newItems.push({
-									id: nanoid(),
-									authorText: 'John Doe',
-									companyName: 'Company Name',
-									descText: 'I have been working with these guys for years now! With lots of hard work and timely communication, they made sure they delivered the best to me. Highly recommended!',
-									image: ''
-
-								});
-								setAttributes({
-									testimonialItems: newItems
-								})
-							}}
-						>
-							{ __( 'Add Item', 'testimonial-carousel-block' ) }
-						</Button>
-						
-					</ToolbarButton>
-				</ToolbarGroup>
-			</BlockControls>
-			
 			<Inspector
 				attributes={ attributes }
 				setAttributes={ setAttributes }
@@ -96,23 +68,6 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 				{ testimonialItems?.map( ( testimonial, index ) => (
 					<div className='testimonial-item__wrap' key={testimonial.id}>
 						<div className='testimonial-item__content' style={ alignmentStyle }>
-
-							<Button
-								showTooltip={ true }
-								tooltipPosition="top"
-								label={ __( 'Delete', 'testimonial-carousel-block' ) }
-								variant="primary"
-								icon={ <Dashicon icon="trash" /> }
-								onClick={ () => {
-									const deleteFaqs = testimonialItems.filter(
-										( ele ) => ele.id !== testimonial.id
-									);
-
-									setAttributes( {
-										testimonialItems: [ ...deleteFaqs ],
-									} );
-								} }
-							/>
 							
 							<RichText 
 								value={ testimonial.descText }

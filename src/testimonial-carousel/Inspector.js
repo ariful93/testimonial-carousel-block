@@ -4,6 +4,7 @@ import {
     RangeControl, SelectControl, ToggleControl
 } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
+import { nanoid } from 'nanoid';
 
 const Inspector = ( { attributes, setAttributes } ) => {
 	const {
@@ -22,7 +23,9 @@ const Inspector = ( { attributes, setAttributes } ) => {
         paddingTop,
 		paddingRight,
 		paddingBottom,
-		paddingLeft
+		paddingLeft,
+        testimonialItems,
+        testimonial_number
 
 	} = attributes;
 
@@ -39,9 +42,48 @@ const Inspector = ( { attributes, setAttributes } ) => {
             <InspectorControls>
                 <PanelBody title={ __( 'General', 'testimonial-carousel-block' ) }>
                     <RangeControl
-                        label={ __( 'Slides To Show', 'testimonial-carousel-block' ) }
+                        label={ __( 'Number of Testimonials', 'testimonial-carousel-block' ) }
+                        value={ testimonial_number }
+
+                        onChange={ ( newNumber ) => {
+                            const cloneBlocks = [ ...testimonialItems ];
+                            
+                            if ( cloneBlocks.length < newNumber ) {
+                                const numbers = Math.abs( newNumber - cloneBlocks.length );
+                                for ( let i = 0; i < numbers; i++ ) {
+                                    cloneBlocks.push( {
+                                        id: nanoid(),
+                                        authorText: 'John Doe',
+                                        companyName: 'Company Name',
+                                        descText: 'I have been working with these guys for years now! With lots of hard work and timely communication, they made sure they delivered the best to me. Highly recommended!',
+                                        image: ''
+                                    } );
+                                }
+                                setAttributes( {
+                                    testimonialItems: cloneBlocks,
+                                } );
+                            } else {
+                                const numbers = Math.abs( newNumber - cloneBlocks.length );
+                                const data_new = cloneBlocks;
+                                for ( let i = 0; i < numbers; i++ ) {
+                                    data_new.pop();
+                                }
+                                setAttributes( {
+                                    testimonialItems: data_new,
+                                } );
+                            }
+                            setAttributes( {
+                                testimonial_number: newNumber,
+                            } );
+                        } }
                         min={ 1 }
-                        max={ 20 }
+                        max={ 50 }
+                    />
+
+                    <RangeControl
+                        label={ __( 'Number of Columns', 'testimonial-carousel-block' ) }
+                        min={ 1 }
+                        max={ 10 }
                         value={ slidesToShow }
                         onChange={ ( value ) =>
                             setAttributes( {

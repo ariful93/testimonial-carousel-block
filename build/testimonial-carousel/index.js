@@ -20,6 +20,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var nanoid__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! nanoid */ "./node_modules/nanoid/index.browser.js");
+
 
 
 
@@ -44,7 +46,9 @@ const Inspector = ({
     paddingTop,
     paddingRight,
     paddingBottom,
-    paddingLeft
+    paddingLeft,
+    testimonialItems,
+    testimonial_number
   } = attributes;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.BlockControls, {
     key: "controls"
@@ -57,9 +61,44 @@ const Inspector = ({
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('General', 'testimonial-carousel-block')
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Slides To Show', 'testimonial-carousel-block'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Number of Testimonials', 'testimonial-carousel-block'),
+    value: testimonial_number,
+    onChange: newNumber => {
+      const cloneBlocks = [...testimonialItems];
+      if (cloneBlocks.length < newNumber) {
+        const numbers = Math.abs(newNumber - cloneBlocks.length);
+        for (let i = 0; i < numbers; i++) {
+          cloneBlocks.push({
+            id: (0,nanoid__WEBPACK_IMPORTED_MODULE_4__.nanoid)(),
+            authorText: 'John Doe',
+            companyName: 'Company Name',
+            descText: 'I have been working with these guys for years now! With lots of hard work and timely communication, they made sure they delivered the best to me. Highly recommended!',
+            image: ''
+          });
+        }
+        setAttributes({
+          testimonialItems: cloneBlocks
+        });
+      } else {
+        const numbers = Math.abs(newNumber - cloneBlocks.length);
+        const data_new = cloneBlocks;
+        for (let i = 0; i < numbers; i++) {
+          data_new.pop();
+        }
+        setAttributes({
+          testimonialItems: data_new
+        });
+      }
+      setAttributes({
+        testimonial_number: newNumber
+      });
+    },
     min: 1,
-    max: 20,
+    max: 50
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Number of Columns', 'testimonial-carousel-block'),
+    min: 1,
+    max: 10,
     value: slidesToShow,
     onChange: value => setAttributes({
       slidesToShow: value
@@ -215,12 +254,16 @@ const attributes = {
   testimonialItems: {
     type: "array",
     default: [{
-      id: 1,
+      id: 'guy67767',
       descText: 'I have been working with these guys for years now! With lots of hard work and timely communication, they made sure they delivered the best to me. Highly recommended!',
       authorText: 'John Doe',
       companyName: 'Company Name',
       image: ''
     }]
+  },
+  testimonial_number: {
+    type: 'number',
+    default: 1
   },
   slidesToShow: {
     type: 'number',
@@ -308,14 +351,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./src/testimonial-carousel/editor.scss");
-/* harmony import */ var react_slick__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-slick */ "./node_modules/react-slick/lib/index.js");
-/* harmony import */ var nanoid__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! nanoid */ "./node_modules/nanoid/index.browser.js");
-/* harmony import */ var _Inspector__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Inspector */ "./src/testimonial-carousel/Inspector.js");
-
-
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/testimonial-carousel/editor.scss");
+/* harmony import */ var react_slick__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-slick */ "./node_modules/react-slick/lib/index.js");
+/* harmony import */ var _Inspector__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Inspector */ "./src/testimonial-carousel/Inspector.js");
 
 
 
@@ -379,24 +417,10 @@ function Edit({
   };
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.BlockControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToolbarGroup, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToolbarButton, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
-    onClick: () => {
-      const newItems = [...testimonialItems];
-      newItems.push({
-        id: (0,nanoid__WEBPACK_IMPORTED_MODULE_7__.nanoid)(),
-        authorText: 'John Doe',
-        companyName: 'Company Name',
-        descText: 'I have been working with these guys for years now! With lots of hard work and timely communication, they made sure they delivered the best to me. Highly recommended!',
-        image: ''
-      });
-      setAttributes({
-        testimonialItems: newItems
-      });
-    }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Add Item', 'testimonial-carousel-block'))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Inspector__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Inspector__WEBPACK_IMPORTED_MODULE_5__["default"], {
     attributes: attributes,
     setAttributes: setAttributes
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_slick__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_slick__WEBPACK_IMPORTED_MODULE_4__["default"], {
     ...settings
   }, testimonialItems?.map((testimonial, index) => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "testimonial-item__wrap",
@@ -404,21 +428,7 @@ function Edit({
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "testimonial-item__content",
     style: alignmentStyle
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
-    showTooltip: true,
-    tooltipPosition: "top",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Delete', 'testimonial-carousel-block'),
-    variant: "primary",
-    icon: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Dashicon, {
-      icon: "trash"
-    }),
-    onClick: () => {
-      const deleteFaqs = testimonialItems.filter(ele => ele.id !== testimonial.id);
-      setAttributes({
-        testimonialItems: [...deleteFaqs]
-      });
-    }
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
     value: testimonial.descText,
     onChange: value => {
       const newItems = [...testimonialItems];
