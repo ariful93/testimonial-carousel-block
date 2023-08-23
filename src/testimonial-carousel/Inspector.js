@@ -51,7 +51,7 @@ const Inspector = ( { attributes, setAttributes } ) => {
                     />
                     
                 </PanelBody>
-                <PanelBody title={ __( 'Slider Settings', 'testimonial-carousel-block' ) } initialOpen={false}>
+                <PanelBody title={ __( 'Carousel Settings', 'testimonial-carousel-block' ) } initialOpen={false}>
                     <ToggleControl
                         className='wpf-component_toggle-control'
                         label={ __( 'Show Arrows', 'testimonial-carousel-block' ) }
