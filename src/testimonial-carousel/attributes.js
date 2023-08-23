@@ -22,7 +22,7 @@ const attributes = {
     },
     slidesDotsShow: {
         type: 'boolean',
-        default: false
+        default: true
     },
     slidesAutoplay: {
         type: 'boolean',
