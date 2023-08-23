@@ -1,13 +1,13 @@
 === Testimonial Carousel Gutenberg Block ===
-Contributors:      wpfound
-Donate link: https://github.com/ariful93/testimonial-carousel-gutenberg-block
-Tags:              gutenberg, testimonials, carousel, slider, testimonial-block, block
-Requires at least: 5.4
-Tested up to: 6.2.2
-Requires PHP: 7.2
-Stable tag:        1.0
-License:           GPL-2.0-or-later
-License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+Contributors:       wpfound
+Donate link:        https://github.com/ariful93/testimonial-carousel-gutenberg-block
+Tags:               gutenberg, testimonials, carousel, slider, testimonial-block, block
+Requires at least:  5.4
+Tested up to:       6.2.2
+Requires PHP:       7.2
+Stable tag:         1.0
+License:            GPL-2.0-or-later
+License URI:        https://www.gnu.org/licenses/gpl-2.0.html
 
 Example block scaffolded with Create Block tool.
 

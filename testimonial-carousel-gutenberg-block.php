@@ -1,11 +1,13 @@
 <?php
 /**
  * Plugin Name:       Testimonial Carousel for Gutenberg Block
+ * Plugin URI:        https://github.com/ariful93/testimonial-carousel-gutenberg-block
  * Description:       Testimonials Carousel Block allows you to add a testimonials carousel block to your WordPress content via the block editor.
+ * Author:            WPFound
+ * Author URI         https://github.com/ariful93
  * Requires at least: 6.1
  * Requires PHP:      7.0
  * Version:           1.0
- * Author:            The WordPress Contributors
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       testimonial-carousel-block
