@@ -155,13 +155,15 @@
 .wp-block-wpfound-testimonial-carousel .slick-slider .slick-arrow {
   position: absolute;
   bottom: 25px;
-  left: 45%;
+  left: 50%;
   transform: translateX(-50%);
   margin: 0;
+  margin-left: -20px;
 }
 .wp-block-wpfound-testimonial-carousel .slick-slider .slick-arrow.slick-next {
   left: auto;
-  right: 43%;
+  right: 50%;
+  margin-right: -120px;
 }
 .wp-block-wpfound-testimonial-carousel .slick-slider .slick-dots {
   margin: 0 auto;

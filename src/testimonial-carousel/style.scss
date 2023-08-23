@@ -94,14 +94,15 @@
 		.slick-arrow {
 			position: absolute;
 			bottom: 25px;
-			left: 45%;
+			left: 50%;
 			transform: translateX(-50%);
 			margin: 0;
-		
+			margin-left: -20px;
 
 			&.slick-next {
 				left: auto;
-				right: 43%;
+				right: 50%;
+				margin-right: -120px;
 
 			}
 		}
