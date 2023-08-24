@@ -1,9 +1,10 @@
+import { Dashicon } from '@wordpress/components';
 import domReady from '@wordpress/dom-ready';
-import { render } from '@wordpress/element';
+import { createRoot, render } from '@wordpress/element';
 import Slider from 'react-slick';
 
 const App = ( { attributes } ) => {
-	const { 
+	const {
 		slidesToShow,
 		slidesArrowShow, 
 		slidesDotsShow,
@@ -36,8 +37,8 @@ const App = ( { attributes } ) => {
 		infinite: infiniteLoop,
 		speed: transitionSpeed,
 		pauseOnHover: pauseOnHover,
-		prevArrow: <button type="button"><span class="dashicons dashicons-arrow-left-alt"></span></button>,
-        nextArrow: <button type="button"><span class="dashicons dashicons-arrow-right-alt"></span></button>,
+		prevArrow: <button type="button"><Dashicon icon="arrow-left-alt2" /></button>,
+        nextArrow: <button type="button"><Dashicon icon="arrow-right-alt2" /></button>,
 		
 	};
 
@@ -106,16 +107,30 @@ const App = ( { attributes } ) => {
 };
 
 domReady( () => {
-	const mountWrap = document.querySelector(
+	const elements = document.querySelectorAll(
 		'.wp-block-wpfound-testimonial-carousel'
 	);
+	const elementsArr = Array.from( elements );
 
-	render(
-		<App
-			attributes={ JSON.parse(
-				mountWrap.getAttribute( 'data-attributes' )
-			) }
-		/>,
-		mountWrap
-	);
+	elementsArr.forEach( ( item ) => {
+		if ( createRoot ) {
+			createRoot( item ).render(
+				<App
+					attributes={ JSON.parse(
+						item.getAttribute( 'data-attributes' )
+					) }
+				/>
+			);
+		} else {
+			render(
+				<App
+					attributes={ JSON.parse(
+						item.getAttribute( 'data-attributes' )
+					) }
+				/>,
+				item
+			);
+		}
+	} );
+
 } );

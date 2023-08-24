@@ -7,7 +7,7 @@ import Slider from 'react-slick';
 import Inspector from './Inspector';
 
 
-export default function Edit({ attributes, setAttributes, clientId }) {
+export default function Edit({ attributes, setAttributes }) {
 	const { 
 		slidesToShow,
 		slidesArrowShow, 
@@ -41,8 +41,8 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 		infinite: infiniteLoop,
 		speed: transitionSpeed,
 		pauseOnHover: pauseOnHover,
-		prevArrow: <button type="button"><span class="dashicons dashicons-arrow-left-alt"></span></button>,
-        nextArrow: <button type="button"><span class="dashicons dashicons-arrow-right-alt"></span></button>,
+		prevArrow: <button type="button"><Dashicon icon="arrow-left-alt2" /></button>,
+        nextArrow: <button type="button"><Dashicon icon="arrow-right-alt2" /></button>,
 		
 	};
 

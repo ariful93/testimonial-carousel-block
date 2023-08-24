@@ -3,7 +3,7 @@ const attributes = {
         type: "array",
         default: [
             {
-                id: 'guy67767',
+                id: 1,
                 descText: 'I have been working with these guys for years now! With lots of hard work and timely communication, they made sure they delivered the best to me. Highly recommended!',
                 authorText: 'John Doe',
                 companyName: 'Company Name',
