@@ -7,7 +7,7 @@
  * Author URI         https://github.com/ariful93
  * Requires at least: 6.1
  * Requires PHP:      7.0
- * Version:           1.0
+ * Version:           1.0.0
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       testimonial-carousel-block
@@ -28,11 +28,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Testimonial_Carousel_Gutenberg_Block class.
+ * WPFound_Testimonial_Carousel_Gutenberg_Block class.
  *
- * @class Testimonial_Carousel_Gutenberg_Block The class that holds the entire Testimonial_Carousel_Gutenberg_Block plugin.
+ * @class WPFound_Testimonial_Carousel_Gutenberg_Block The class that holds the entire WPFound_Testimonial_Carousel_Gutenberg_Block plugin.
  */
-class Testimonial_Carousel_Gutenberg_Block {
+class WPFound_Testimonial_Carousel_Gutenberg_Block {
 
     /**
      * Singleton pattern
@@ -42,12 +42,12 @@ class Testimonial_Carousel_Gutenberg_Block {
     private static $instance = false;
 
     /**
-     * Initializes the Testimonial_Carousel_Gutenberg_Block class.
+     * Initializes the WPFound_Testimonial_Carousel_Gutenberg_Block class.
      *
-     * Checks for an existing Testimonial_Carousel_Gutenberg_Block instance
+     * Checks for an existing WPFound_Testimonial_Carousel_Gutenberg_Block instance
      * and if it can't find one, then creates it.
      *
-     * @since 1.0
+     * @since 1.0.0
      *
      * @return self
      */
@@ -60,7 +60,7 @@ class Testimonial_Carousel_Gutenberg_Block {
     }
 
     /**
-     * Constructor for the Testimonial_Carousel_Gutenberg_Block class
+     * Constructor for the WPFound_Testimonial_Carousel_Gutenberg_Block class
      *
      * Sets up all the appropriate hooks and actions
      * within our plugin.
@@ -74,7 +74,7 @@ class Testimonial_Carousel_Gutenberg_Block {
     /**
      * Load all includes file
      *
-     * @since 0.0.1
+     * @since 1.0.0
      *
      * @return void
      */
@@ -85,7 +85,7 @@ class Testimonial_Carousel_Gutenberg_Block {
     /**
      * Register gutenberg blocks.
      *
-     * @since 1.0
+     * @since 1.0.0
      *
      * @return void
      */
@@ -96,7 +96,7 @@ class Testimonial_Carousel_Gutenberg_Block {
     /**
      * Initialize blocks registration.
      *
-     * @since 1.0
+     * @since 1.0.0
      *
      * @return void
      */
@@ -108,10 +108,10 @@ class Testimonial_Carousel_Gutenberg_Block {
 /**
  * Init the team member for gutenberg plugin.
  *
- * @return Testimonial_Carousel_Gutenberg_Block the plugin object
+ * @return WPFound_Testimonial_Carousel_Gutenberg_Block the plugin object
  */
-function testimonial_carousel_gutenberg_block() {
-    return Testimonial_Carousel_Gutenberg_Block::init();
+function wpfound_testimonial_carousel_gutenberg_block() {
+    return WPFound_Testimonial_Carousel_Gutenberg_Block::init();
 }
 
-testimonial_carousel_gutenberg_block();
+wpfound_testimonial_carousel_gutenberg_block();

@@ -1,5 +1,6 @@
 import { MediaUpload, RichText, useBlockProps } from '@wordpress/block-editor';
 import { Dashicon } from '@wordpress/components';
+import { Icon, chevronLeft, chevronRight } from '@wordpress/icons';
 import './editor.scss';
 
 import Slider from 'react-slick';
@@ -41,8 +42,8 @@ export default function Edit({ attributes, setAttributes }) {
 		infinite: infiniteLoop,
 		speed: transitionSpeed,
 		pauseOnHover: pauseOnHover,
-		prevArrow: <button type="button"><Dashicon icon="arrow-left-alt2" /></button>,
-        nextArrow: <button type="button"><Dashicon icon="arrow-right-alt2" /></button>,
+		prevArrow: <Icon icon={ chevronLeft } />,
+        nextArrow: <Icon icon={ chevronRight } />,
 		
 	};
 

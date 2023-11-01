@@ -1,6 +1,6 @@
-import { Dashicon } from '@wordpress/components';
 import domReady from '@wordpress/dom-ready';
 import { createRoot, render } from '@wordpress/element';
+import { Icon, chevronLeft, chevronRight } from '@wordpress/icons';
 import Slider from 'react-slick';
 
 const App = ( { attributes } ) => {
@@ -37,8 +37,8 @@ const App = ( { attributes } ) => {
 		infinite: infiniteLoop,
 		speed: transitionSpeed,
 		pauseOnHover: pauseOnHover,
-		prevArrow: <button type="button"><Dashicon icon="arrow-left-alt2" /></button>,
-        nextArrow: <button type="button"><Dashicon icon="arrow-right-alt2" /></button>,
+		prevArrow: <Icon icon={ chevronLeft } />,
+        nextArrow: <Icon icon={ chevronRight } />,
 		
 	};
 
