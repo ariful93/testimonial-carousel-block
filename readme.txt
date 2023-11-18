@@ -1,5 +1,5 @@
 === Testimonial Carousel Block ===
-Contributors:       wpfound
+Contributors:       wpfound, arif757266
 Donate link:        https://github.com/ariful93/testimonial-carousel-block
 Tags:               gutenberg, testimonials, carousel, slider, testimonial-block, block
 Requires at least:  5.4
