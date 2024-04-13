@@ -1,11 +1,11 @@
 === Testimonial Carousel Block ===
-Contributors:       wpfound
+Contributors:       wpfound, ariful93
 Donate link:        https://github.com/ariful93/testimonial-carousel-block
 Tags:               gutenberg, testimonials, carousel, slider, testimonial-block, block
-Requires at least:  5.4
-Tested up to:       6.2.2
+Requires at least:  6.1
+Tested up to:       6.4.3
 Requires PHP:       7.2
-Stable tag:         1.0.1
+Stable tag:         1.0.2
 License:            GPL-2.0-or-later
 License URI:        https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,3 +28,11 @@ From your WordPress dashboard
 5. **Insert Block** on your Gutenberg Editor and select "Testimonial Carousel"
 
 == Screenshots ==
+
+== Changelog ==
+
+= 1.0.2 =
+* Compatible with wordpress 6.4.3 *
+
+= 1.0.1 =
+* Initial release. *
